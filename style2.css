@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100vh;
+}
+:root{
+    --backgroundColor :#E7E6F7;
+    --primaryColor: #AEA3B0;
+    --secondaryColor:#C6D2ED;
+    --dark: #0E0E0E;
+    --textTitleColor: #827081;
+    --secondaryTextColor : #E3D0D8;
+    --textFont : 'source sans 3';
+    --textTitle : 'montserrat';
+    --secondaryText : 'Handlee';
+    --spacing: 1rem;
+    --spacing-2: calc(var(--spacing)*2);
+    --spacing-XS: calc(var(--spacing)/2);
+    --spacing-XXS: calc(var(--spacing)/4);
+}
+a{
+    text-decoration: none;
+}
+p{
+    width: 50ch;
+}
+h1,
+h2,
+h3{
+    font-family: var(--textTitle);
+    color : var(--textTitleColor);
+}
+a,
+p{
+    font-family: var(--textFont);
+    font-size: 0.75rem;
+    color: var(--dark);
+}
+/*header*/
+nav{
+    background-color: var(--primaryColor);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display:flex;
+    padding: var(--spacing-XXS);
+    justify-content: space-between;
+    align-items: center;
+}
+nav>a{
+    font-family: var(--secondaryText);
+    width: 5.75rem;
+    height: 2rem;
+}
+nav ul {
+    height: 2rem;
+}
+li{
+    list-style-type: none;
+    display: inline;
+    padding-left: .05rem;
+}
+h1{
+    background-image: url(../images/Tocane-St-Apre.jpg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    width:100vw;
+    height: auto;
+    padding: var(--spacing-2);
+    color: rgba(0,0,0,0);
+}
+/*main*/
+main{
+    margin: auto;
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 65ch;
+}
+article{
+    padding: var(--spacing);
+}
+h2{
+    padding:var(--spacing-XXS);
+    font-size: var(--spacing);
+    text-align: center;
+    margin: auto;
+}
+#lastNew > a > h2::before,
+#story > a > h2::before,
+.Instagram::before{
+    content:"";
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#lastNew > a > h2::before,
+#story > a > h2::before{
+    height: 8rem;
+    margin-bottom: var(--spacing-XS);
+}
+#lastNew > a > h2::before {
+    background-image: url(../images/felibre.jpeg);
+}
+#story > a > h2::before {
+    background-image: url(../images/photo-histoire.jpg);
+}
+img{
+    height: 8rem;
+    width: auto;
+    margin: auto;
+}
+/*footer*/
+footer{
+    background-color: var(--secondaryColor);
+    padding-left: var(--spacing);
+    padding-bottom: 3rem;
+}
+section{
+    padding: var(--spacing-XXS) 0rem;
+}
+section > p:first-of-type{
+    font-weight: bold;
+}
+i{
+    height: var(--spacing-2);
+}
+section > ul > li > a:first-of-type::before{
+    background-image: url(../images/instagram.svg);
+    background-size: var(--spacing-2);
+}

@@ -1,0 +1,218 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    height: 100vh;
+    max-width: 100vw;
+}
+
+:root{
+    --backgroundColor :#E7E6F7;
+    --primaryColor: #AEA3B0;
+    --secondaryColor:#C6D2ED;
+    --dark: #0E0E0E;
+
+    --textTitleColor: #827081;
+    --secondaryTextColor : #E3D0D8;
+
+    --textFont : 'source sans 3';
+    --textTitle : 'montserrat';
+    --secondaryText : 'Handlee';
+
+    --spacing: 1rem;
+    --spacing-2: calc(var(--spacing)*2);
+    --spacing-XS: calc(var(--spacing)/2);
+    --spacing-XXS: calc(var(--spacing)/4);
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    width: 50ch;
+}
+
+h1,
+h2,
+h3{
+    font-family: var(--textTitle);
+    color : var(--textTitleColor);
+}
+
+a,
+p{
+    font-family: var(--textFont);
+    font-size: clamp(0.75rem, 2vw, 1.75rem);
+    color: var(--dark);
+}
+
+nav>a,
+footer p {
+    font-size: .75rem;
+}
+
+/*header*/
+nav{
+    background-color: var(--primaryColor);
+    position: fixed;
+    bottom: 0;
+    height:clamp(2rem, 2vw, 3rem);
+    left: 0;
+    right: 0; 
+    padding: 0 .25rem;
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav>a{
+    font-family: var(--secondaryText);
+    width: 5.75rem;
+}
+
+li{
+    list-style-type: none;
+    display: inline;
+    padding-left: .25rem;
+}
+
+h1{
+    background-image: url(../images/Tocane-St-Apre.jpg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    width:100vw;
+    height: auto;
+    padding: var(--spacing-2);
+    color: rgba(0,0,0,0);
+}
+
+/*main*/
+main{
+    margin: auto;
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+article{
+    padding: var(--spacing);
+    max-width: 65ch;
+}
+
+h2{
+    padding:var(--spacing-XXS);
+    font-size: clamp(var(--spacing),2vw,5rem);
+    text-align: center;
+    margin: auto;
+}
+
+
+#lastNew > a > h2::before,
+#story > a > h2::before{
+    content:"";
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#lastNew > a > h2::before,
+#story > a > h2::before{
+    height: 8rem;
+    margin: auto var(--spacing);
+    width: auto;
+}
+
+#lastNew > a > h2::before {
+    background-image: url(../images/felibre.jpeg);
+    margin-left: 6.25rem;
+}
+
+#story > a > h2::before {
+    background-image: url(../images/photo-histoire.jpg);
+    margin-left: 3rem;
+}
+
+img{
+    height: 8rem;
+    width: auto;
+    margin: auto;
+}
+
+/*footer*/
+footer{
+    background-color: var(--secondaryColor);
+    padding-bottom: 3rem;
+}
+
+section{
+    padding: var(--spacing-XXS) 0rem;
+}
+
+section > p:first-of-type{
+    font-weight: bold;
+}
+
+i{
+    height: var(--spacing-2);
+}
+
+@media screen and (width >= 768px){
+    nav{
+        justify-content: space-between;
+        position:static;
+        align-items: center;
+        height: 3rem;
+        padding: var(--spacing);
+        width: 100%;
+    }
+
+    h1{
+        height: 15rem;
+    }
+
+    h2{
+        padding: var(--spacing-XS);
+    }
+
+    nav>a{
+        width: auto;
+        height: auto;
+    }
+
+    footer{
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+        justify-items: stretch;
+    }
+
+    footer ul{
+        justify-self: end;
+    }
+
+    #lastNew > a > h2::before{
+        height: 15rem;
+        margin-left: 6.5rem;
+    }
+
+    #story > a > h2::before{
+        height: 10rem;
+        margin-left: 4rem;
+    }
+
+    img{
+        height: 10rem;
+    }
+
+    footer a{
+        font-size: 0.75rem;
+    }
+
+}
